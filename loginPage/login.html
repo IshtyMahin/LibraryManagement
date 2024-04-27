@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RMSTU Library</title>
+    <link rel="stylesheet" href="./loginStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <span class="bg-animate"></span>
+      <span class="bg-animate2"></span>
+      <div class="form-box login">
+        <h2 class="animation" style="--i: 0; --j: 21">Login</h2>
+        <form action="" onsubmit="handleLogin(event)">
+          <div class="input-box animation" style="--i: 1; --j: 22">
+            <input id="reg_id" type="number" required />
+            <label>Registration ID</label>
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="input-box animation" style="--i: 2; --j: 23">
+            <input id="pass" type="password" required />
+            <label>Password</label>
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <button type="submit" class="btn animation" style="--i: 3; --j: 24">
+            Login
+          </button>
+          <div class="forgot-link animation" style="--i: 4; --j: 25">
+            <a href="#">Forgotten password?</a>
+          </div>
+          <div class="logreg-link animation" style="--i: 5; --j: 26">
+            <p>
+              Don't have an account?
+              <a href="#" class="register-link">Sign Up</a>
+            </p>
+          </div>
+        </form>
+      </div>
+      <div class="info-text login">
+        <div class="rmstu-logo animation" style="--i: 0; --j: 20">
+          <img src="../assets/image/RMSTU_logo.png" alt="rmstu logo" />
+        </div>
+        <h2 class="animation" style="--i: 1; --j: 21">Welcome Back!</h2>
+        <p class="animation" style="--i: 2; --j: 22">to RMSTU Library</p>
+      </div>
+
+      <div class="form-box register">
+        <h2 class="animation" style="--i: 17; --j: 0">Sign Up</h2>
+        <form action=""  onsubmit="handleRegistration(event)">
+          <div class="input-box animation" style="--i: 18; --j: 1">
+            <input type="text" id="username" required />
+            <label>Name</label>
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="input-box animation" style="--i: 19; --j: 2">
+            <input type="number" id="reg-id" required />
+            <label>Registration ID</label>
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+          <div class="input-box animation" style="--i: 20; --j: 3">
+            <input type="text" id="session" required />
+            <label>Session</label>
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <div class="input-box animation" style="--i: 21; --j: 4">
+            <input type="text" id="dept" required />
+            <label>Depertment</label>
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <!-- <div class="input-box animation" style="--i: 22; --j: 5">
+            <input type="email" id="email" required />
+            <label>Email</label>
+            <i class="fa-solid fa-envelope"></i>
+          </div> -->
+          <div class="input-box animation" style="--i: 23; --j: 6">
+            <input type="password" id="password" required />
+            <label>Password</label>
+            <i class="fa-solid fa-eye-slash"></i>
+            <!-- <i class="fa-solid fa-eye"></i> -->
+          </div>
+          <div class="input-box animation" style="--i: 24; --j: 7">
+            <input type="password" id="confirm-password" required />
+            <label>Confirm password</label>
+            <i class="fa-solid fa-eye-slash"></i>
+            <!-- <i class="fa-solid fa-eye"></i> -->
+          </div>
+          <div class="input-box animation" style="--i: 24; --j: 7">
+            <input type="text" id="batch" required />
+            <label>Batch</label>
+            <i class="fa-solid fa-eye-slash"></i>
+            <!-- <i class="fa-solid fa-eye"></i> -->
+          </div>
+          <button type="submit" class="btn animation" style="--i: 24; --j: 7">
+            Sign Up
+          </button>
+          <div class="logreg-link animation" style="--i: 25; --j: 8">
+            <p>
+              Already have an account? <a href="#" class="login-link">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+      <div class="info-text register">
+        <div class="rmstu-logo animation" style="--i: 16; --j: 0">
+          <img src="../assets/image/RMSTU_logo.png" alt="rmstu logo" />
+        </div>
+        <h2 class="animation" style="--i: 17; --j: 1">Welcome</h2>
+        <p class="animation" style="--i: 18; --j: 2">to RMSTU Library</p>
+      </div>
+    </div>
+    <script src="./loginScript.js"></script>
+    <script src="./auth.js"></script>
+  </body>
+</html>
