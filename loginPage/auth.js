@@ -1,6 +1,5 @@
 
-const token = getCookie("token");
-console.log(token);
+
 const handleRegistration = (event) => {
   event.preventDefault();
   const name = getValue("username");
