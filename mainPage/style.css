@@ -206,7 +206,7 @@ section {
 
 .books-list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 .container {
@@ -217,6 +217,7 @@ section {
   border-radius: 5px;
   border: .5px solid rgba(164, 163, 163, 0.454);
   cursor: pointer;
+  height: 500px;
 }
 .overlay {
   position: absolute;
@@ -241,7 +242,7 @@ section {
   background: rgba(255, 255, 255, 0.371);
 }
 .book-img {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding: 10px 0;
 }

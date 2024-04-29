@@ -1,5 +1,6 @@
 
 
+
 const handleRegistration = (event) => {
   event.preventDefault();
   const name = getValue("username");
@@ -65,7 +66,7 @@ const handleLogin = (event) => {
     regId: regId,
     password: password,
   };
-
+  
   fetch("https://librarymanagementsystem-0vjg.onrender.com/api/login", {
     method: "POST",
     headers: { "content-type": "application/json" },
@@ -76,10 +77,15 @@ const handleLogin = (event) => {
       return res.json();
     })
     .then((data) => {
+      console.log(data);
+      userType = data.type
+      localStorage.setItem("token", data.token);
+      window.location.href = "/mainPage/";
+
       if (data.user) {
         localStorage.setItem("user_id", data.user.regId);
+        
         console.log(data);
-        // window.location.href = "/mainPage/";
       } else {
         console.log(data.message);
         // document.getElementById("login-error").textContent = data.error;
@@ -99,6 +105,7 @@ const handleLogout = async () => {
       console.log(data);
 
       localStorage.removeItem("user_id");
+      localStorage.removeItem("token");
       window.location.href = "/mainPage/";
     })
     .catch((error) => {

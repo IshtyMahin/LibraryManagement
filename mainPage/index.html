@@ -18,14 +18,14 @@
       <nav class="nav-bar">
         <div class="nav-top">
           <div class="logo">
-            <a href="">
+            <a href="/mainPage/index.html">
               <!-- <img src="" alt="logo"> -->
               RMSTU LIBRARY
             </a>
           </div>
           <div class="searchbar">
             <div class="header-search">
-              <form action="#">
+              <form id="searchForm">
                 <div class="input-group">
                   <input
                     class="form-control new-input"
@@ -59,594 +59,50 @@
               <span>Sign in</span>
             </a>
           </div>
-          <a onclick="handleLogout()" href="#" class="profile-item">Logout</a>
+          <a class="user-menu" onclick="handleLogout()" href="#" class="profile-item">Logout</a>
         </div>
         <div class="separator"></div>
         <div class="nav-down">
           <ul class="dept-list">
             <li class="dept-name">
-              <a href="#all">All</a>
+              <a href="?filter=catagory&value=All books">All</a>
             </li>
             <li class="dept-name">
-              <a href="#cse">CSE</a>
+              <a href="?filter=catagory&value=Computer Science and Engineering"
+                >CSE</a
+              >
             </li>
             <li class="dept-name">
-              <a href="#mgt">MGT</a>
+              <a href="?filter=catagory&value=Management">MGT</a>
             </li>
             <li class="dept-name">
-              <a href="#thm">THM</a>
+              <a
+                href="?filter=catagory&value=Tourism and Hospitality Management"
+                >THM</a
+              >
             </li>
             <li class="dept-name">
-              <a href="#fes">FES</a>
+              <a
+                href="?filter=catagory&value=Forestry and Environmental Science"
+                >FES</a
+              >
             </li>
             <li class="dept-name">
-              <a href="#fmrt">FMRT</a>
+              <a
+                href="?filter=catagory&value=Fisharies and Marine Resource Technology"
+                >FMRT</a
+              >
             </li>
           </ul>
         </div>
       </nav>
     </header>
     <main>
-      <section id="all" class="all-books">
-        <div>
-          <div class="section-heading">
-            <h1>All books</h1>
-            <button class="view-all-btn">
-              View All<i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
-          <div class="books-list">
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="divider"></div>
-      <section id="cse" class="cse-books">
-        <div>
-          <div class="section-heading">
-            <h1>Computer Science and Engneering</h1>
-            <button class="view-all-btn">
-              View All<i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
-          <div class="books-list">
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="divider"></div>
-      <section id="mgt" class="mgt-books">
-        <div>
-          <div class="section-heading">
-            <h1>Management</h1>
-            <button class="view-all-btn">
-              View All<i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
-          <div class="books-list">
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="divider"></div>
-      <section id="thm" class="thm-books">
-        <div>
-          <div class="section-heading">
-            <h1>Tourism and Hospitality Management</h1>
-            <button class="view-all-btn">
-              View All<i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
-          <div class="books-list">
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="divider"></div>
-      <section id="fes" class="fes-books">
-        <div>
-          <div class="section-heading">
-            <h1>Forestry and Environmental Science</h1>
-            <button class="view-all-btn">
-              View All<i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
-          <div class="books-list">
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="divider"></div>
-      <section id="fmrt" class="fmrt-books">
-        <div>
-          <div class="section-heading">
-            <h1>Fisheries and Marine Resources Technology</h1>
-            <button class="view-all-btn">
-              View All<i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
-          <div class="books-list">
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="book">
-                <div class="book-img">
-                  <img
-                    src="../assets/image/programming_with_c.jpg"
-                    alt="book-image"
-                  />
-                </div>
-                <h2 class="book-header">Programming with C(SIE)</h2>
-                <p class="book-publication">SCHAUM'S OUTLINES SERIES</p>
-                <p class="book-author">Byron Gottfried</p>
-              </div>
-              <div class="overlay">
-                <button class="book-detail-btn">View Details</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </main>
     <footer></footer>
 
     <script src="../loginPage/auth.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
