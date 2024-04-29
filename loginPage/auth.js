@@ -80,7 +80,7 @@ const handleLogin = (event) => {
       console.log(data);
       userType = data.type
       localStorage.setItem("token", data.token);
-      window.location.href = "/mainPage/";
+      window.location.href = "/";
 
       if (data.user) {
         localStorage.setItem("user_id", data.user.regId);
@@ -106,7 +106,7 @@ const handleLogout = async () => {
 
       localStorage.removeItem("user_id");
       localStorage.removeItem("token");
-      window.location.href = "/mainPage/";
+      window.location.href = "/";
     })
     .catch((error) => {
       document.getElementById("login-error").textContent = error.message;
