@@ -59,7 +59,13 @@
               <span>Sign in</span>
             </a>
           </div>
-          <a class="user-menu" onclick="handleLogout()" href="#" class="profile-item">Logout</a>
+          <a
+            class="user-menu"
+            onclick="handleLogout()"
+            href="#"
+            class="profile-item"
+            >Logout</a
+          >
         </div>
         <div class="separator"></div>
         <div class="nav-down">
@@ -97,11 +103,18 @@
         </div>
       </nav>
     </header>
-    <main>
-      
-    </main>
+    <main></main>
     <footer></footer>
 
+    <script>
+      let listItems = document.querySelectorAll(".dept-name");
+      listItems.forEach(function (item) {
+        item.addEventListener("click", function () {
+          let url = this.querySelector("a").getAttribute("href");
+          window.location.href = url;
+        });
+      });
+    </script>
     <script src="../loginPage/auth.js"></script>
     <script src="./script.js"></script>
   </body>

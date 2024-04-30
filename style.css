@@ -132,7 +132,7 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.dept-list li {
+.dept-list li{
   list-style: none;
   padding: 11px 50px 11px 50px;
   cursor: pointer;
