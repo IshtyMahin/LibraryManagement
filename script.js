@@ -1,5 +1,16 @@
 
 
+const showSpinner = () => {
+  const spinner = document.getElementById("loading-spinner");
+  spinner.classList.remove("hidden");
+};
+
+const hideSpinner = () => {
+  const spinner = document.getElementById("loading-spinner");
+  // console.log(s);
+  spinner.classList.add("hidden");
+};
+
 const authVerifier = async () => {
   try {
     const token = localStorage.getItem("token");
@@ -122,6 +133,7 @@ const appendSectionsToMain = async () => {
 };
 
 window.addEventListener("load", async () => {
+  showSpinner();
   const userType = await authVerifier();
   console.log(userType);
   if (userType == "admin" || userType == "user") {
@@ -134,10 +146,11 @@ window.addEventListener("load", async () => {
   let filter = queryParams.get("filter");
   let value = queryParams.get("value");
   console.log(filter, value);
-
+  
   if (value == "All books") {
     (value = ""), (filter = "");
     appendSectionsToMainFilter(value, filter);
+   
   } else if (value && filter) {
     appendSectionsToMainFilter(value, filter);
   } else if (value) {
@@ -145,6 +158,7 @@ window.addEventListener("load", async () => {
   } else {
     appendSectionsToMain();
   }
+  hideSpinner();
 });
 
 const createBookContainer = (title, publication, author) => {
