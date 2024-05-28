@@ -92,21 +92,18 @@ window.addEventListener("load", async () => {
           <p class="book-isbn">ISBN: <span>${book.ISBN}</span></p>
           
           ${
-            userType == "masterAdmin" && (
-              <div class="btn-admin">
-                <button class="book-edit-btn">
-                  <a href="/EditBook/EditBookPage.html?id=${book.ISBN}">
-                    Edit Book
-                  </a>
-                </button>
-                <button
-                  onclick="deleteBook('${book.ISBN}')"
-                  class="book-delete-btn"
-                >
-                  Delete Book
-                </button>
-              </div>
-            )
+            userType === "masterAdmin"
+              ? `<div class="btn-admin">
+            <button class="book-edit-btn">
+              <a href="/EditBook/EditBookPage.html?id=${book.ISBN}">
+                Edit Book
+              </a>
+            </button>
+            <button onclick="deleteBook('${book.ISBN}')" class="book-delete-btn">
+              Delete Book
+            </button>
+          </div>`
+              : ""
           }
             
         </div>
