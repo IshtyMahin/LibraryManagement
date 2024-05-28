@@ -4,7 +4,7 @@ const handleRegistration = (event) => {
   event.preventDefault();
 
   const name = getValue("username");
-  const regId = parseInt(getValue("reg-id"));
+  const regId = getValue("reg-id");
   const session = getValue("session");
   const dept = getValue("dept");
   const batch = getValue("batch");
@@ -52,12 +52,15 @@ const handleRegistration = (event) => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+            alert("Successfully Register your account")
             document.querySelector(".login-link").click();
             event.preventDefault();
           });
       })
       .catch((err) => {
         console.log(err);
+        alert(err);
+        // alert(data.errorMessage);
       });
     
   }
@@ -77,12 +80,14 @@ const getValue = (id) => {
 const handleLogin = (event) => {
   event.preventDefault();
   
-  const regId = parseInt(getValue("reg_id"));
+  const regId = getValue("reg_id");
   const password = getValue("pass");
   const reg = {
     regId: regId,
     password: password,
   };
+
+  console.log(reg,password);
 
   fetch("https://librarymanagementsystem-0vjg.onrender.com/api/login", {
     method: "POST",
@@ -97,10 +102,12 @@ const handleLogin = (event) => {
       if (data.token) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("userType", data.type);
+        alert("Successfully logged in")
         window.location.href = "/";
         console.log(data);
       } else {
         console.log(data.message);
+        alert(data.message);
         // document.getElementById("login-error").textContent = data.error;
       }
     })
