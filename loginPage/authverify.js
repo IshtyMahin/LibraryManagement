@@ -28,7 +28,7 @@ const authVerifier = async () => {
 window.addEventListener("load", async () => {
   const userType = await authVerifier();
   console.log(userType);
-  if (userType == "admin" || userType == "user") {
+  if (userType == "masteradmin" || userType == "user") {
     window.location.href = "/";
   } else {
     // window.location.href = "/loginPage/login.html";

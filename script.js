@@ -131,9 +131,13 @@ window.addEventListener("load", async () => {
   showSpinner();
   const userType = await authVerifier();
   console.log(userType);
-  if (userType == "admin" || userType == "user") {
+  if (userType == "masteradmin" || userType == "user") {
     // window.location.href = "/mainPage/";
     document.getElementById("sign_in").style.display = "none";
+    if (userType == "masteradmin") { 
+      document.getElementById("addBook").style.display = "block";
+    }
+
   } else {
     window.location.href = "/loginPage/login.html";
   }
