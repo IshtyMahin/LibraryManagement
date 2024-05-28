@@ -8,9 +8,43 @@ const hideSpinner = () => {
   spinner.classList.add("hidden");
 };
 
+const authVerifier = async () => {
+  try {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const res = await fetch(
+        "https://librarymanagementsystem-0vjg.onrender.com/api/authverify",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token }),
+        }
+      );
+      if (res.ok) {
+        const data = await res.json();
+        return data.type;
+      } else {
+        throw new Error("Authentication verification failed");
+      }
+    }
+  } catch (error) {
+    console.error("Error verifying authentication:", error);
+  }
+};
+
+
 window.addEventListener("load", async () => {
   showSpinner()
-  document.getElementById("sign_in").style.display = "none";
+  const userType = await authVerifier();
+  console.log(userType);
+  if (userType == "masteradmin" || userType == "user") {
+    document.getElementById("sign_in").style.display = "none";
+  } else {
+    window.location.href = "/loginPage/login.html";
+  }
+
   const queryParams = new URLSearchParams(window.location.search);
   let title = queryParams.get("title");
   console.log(title);
@@ -56,10 +90,25 @@ window.addEventListener("load", async () => {
             In Stock: <span>${book.qty} Copies</span>
           </p>
           <p class="book-isbn">ISBN: <span>${book.ISBN}</span></p>
-          <div class="btn-admin">
-            <button class="book-edit-btn"><a href="/EditBook/EditBookPage.html?id=${book.ISBN}">Edit Book</a></button>
-            <button onclick="deleteBook('${book.ISBN}')" class="book-delete-btn">Delete Book</button>
-          </div>
+          
+          ${
+            userType == "masterAdmin" && (
+              <div class="btn-admin">
+                <button class="book-edit-btn">
+                  <a href="/EditBook/EditBookPage.html?id=${book.ISBN}">
+                    Edit Book
+                  </a>
+                </button>
+                <button
+                  onclick="deleteBook('${book.ISBN}')"
+                  class="book-delete-btn"
+                >
+                  Delete Book
+                </button>
+              </div>
+            )
+          }
+            
         </div>
       </div>
 
