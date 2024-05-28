@@ -163,7 +163,7 @@ const createBookContainer = (book) => {
   container.innerHTML = `
     <div class="book">
       <div class="book-img">
-        <img src="../assets/image/programming_with_c.jpg" alt="book-image">
+        <img src=${book.cover} alt="book-image">
       </div>
       <h2 class="book-header">${title}</h2>
       <p class="book-publication">${publication}</p>
