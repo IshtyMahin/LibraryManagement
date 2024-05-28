@@ -1,5 +1,3 @@
-
-
 const showSpinner = () => {
   const spinner = document.getElementById("loading-spinner");
   spinner.classList.remove("hidden");
@@ -7,7 +5,6 @@ const showSpinner = () => {
 
 const hideSpinner = () => {
   const spinner = document.getElementById("loading-spinner");
-  // console.log(s);
   spinner.classList.add("hidden");
 };
 
@@ -22,7 +19,7 @@ const authVerifier = async () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ token }), 
+          body: JSON.stringify({ token }),
         }
       );
       if (res.ok) {
@@ -36,8 +33,6 @@ const authVerifier = async () => {
     console.error("Error verifying authentication:", error);
   }
 };
-
-
 
 const fetchBook = async (val, filter) => {
   console.log(val, filter);
@@ -138,19 +133,18 @@ window.addEventListener("load", async () => {
   console.log(userType);
   if (userType == "admin" || userType == "user") {
     // window.location.href = "/mainPage/";
-  }
-  else {
+    document.getElementById("sign_in").style.display = "none";
+  } else {
     window.location.href = "/loginPage/login.html";
   }
   const queryParams = new URLSearchParams(window.location.search);
   let filter = queryParams.get("filter");
   let value = queryParams.get("value");
   console.log(filter, value);
-  
+
   if (value == "All books") {
     (value = ""), (filter = "");
     appendSectionsToMainFilter(value, filter);
-   
   } else if (value && filter) {
     appendSectionsToMainFilter(value, filter);
   } else if (value) {
@@ -161,126 +155,78 @@ window.addEventListener("load", async () => {
   hideSpinner();
 });
 
-const createBookContainer = (title, publication, author) => {
+const createBookContainer = (book) => {
+  const { title, publication, author } = book;
   const container = document.createElement("div");
   container.classList.add("container");
 
-  const bookDiv = document.createElement("div");
-  bookDiv.classList.add("book");
-
-  const bookImg = document.createElement("div");
-  bookImg.classList.add("book-img");
-  const img = document.createElement("img");
-  img.src = "../assets/image/programming_with_c.jpg";
-  img.alt = "book-image";
-  bookImg.appendChild(img);
-
-  const bookHeader = document.createElement("h2");
-  bookHeader.classList.add("book-header");
-  bookHeader.textContent = title;
-
-  const bookPublication = document.createElement("p");
-  bookPublication.classList.add("book-publication");
-  bookPublication.textContent = publication;
-
-  const bookAuthor = document.createElement("p");
-  bookAuthor.classList.add("book-author");
-  bookAuthor.textContent = author;
-
-  bookDiv.appendChild(bookImg);
-  bookDiv.appendChild(bookHeader);
-  bookDiv.appendChild(bookPublication);
-  bookDiv.appendChild(bookAuthor);
-
-  container.appendChild(bookDiv);
-  const overlayDiv = document.createElement("div");
-  overlayDiv.classList.add("overlay");
-  const btn = document.createElement("button");
-  btn.classList.add("book-detail-btn");
-  btn.textContent = "View Details";
-  overlayDiv.appendChild(btn);
-  container.appendChild(overlayDiv);
+  container.innerHTML = `
+    <div class="book">
+      <div class="book-img">
+        <img src="../assets/image/programming_with_c.jpg" alt="book-image">
+      </div>
+      <h2 class="book-header">${title}</h2>
+      <p class="book-publication">${publication}</p>
+      <p class="book-author">${author}</p>
+    </div>
+    <div class="overlay">
+      <button onclick='view_details("${title}")' class="book-detail-btn">View Details</button>
+    </div>
+  `;
 
   return container;
 };
 
+
 const createBookSection = (id, title, booksData) => {
   const section = document.createElement("section");
   section.id = id;
-  section.classList.add(`${id}-books`);
+  section.className = `${id}-books`;
 
   const divWrapper = document.createElement("div");
+  divWrapper.innerHTML = `
+    <div class="section-heading">
+      <h1>${title}</h1>
+      <a href="?filter=catagory&value=${title}" class="view-all-btn">
+        View All<i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+    <div class="books-list"></div>
+  `;
 
-  const sectionHeading = document.createElement("div");
-  sectionHeading.classList.add("section-heading");
-
-  const h1 = document.createElement("h1");
-  h1.textContent = title;
-
-  const viewAllBtn = document.createElement("a");
-  viewAllBtn.href = `?filter=catagory&value=${title}`;
-  viewAllBtn.classList.add("view-all-btn");
-  viewAllBtn.textContent = "View All";
-  const arrowIcon = document.createElement("i");
-  arrowIcon.classList.add("fa-solid", "fa-arrow-right");
-  viewAllBtn.appendChild(arrowIcon);
-
-  sectionHeading.appendChild(h1);
-  sectionHeading.appendChild(viewAllBtn);
-
-  const booksList = document.createElement("div");
-  booksList.classList.add("books-list");
-
-  // Populate books in the section
-  for (let i = 0; i < Math.min(8, booksData.length); i++) {
-    const bookContainer = createBookContainer(
-      booksData[i].title,
-      booksData[i].publication,
-      booksData[i].author
-    );
-    booksList.appendChild(bookContainer);
-  }
-
-  divWrapper.appendChild(sectionHeading);
-  divWrapper.appendChild(booksList);
+  const booksList = divWrapper.querySelector(".books-list");
+  booksData.slice(0, 8).forEach((book) => {
+    booksList.appendChild(createBookContainer(book));
+  });
 
   section.appendChild(divWrapper);
-
   return section;
 };
+
 
 const appendSectionsToMainFilter = async (val, filter) => {
   try {
     const mainElement = document.querySelector("main");
     mainElement.innerHTML = "";
-    const section = document.createElement("section");
 
+    const section = document.createElement("section");
     const divWrapper = document.createElement("div");
 
-    const sectionHeading = document.createElement("div");
-    sectionHeading.classList.add("section-heading");
+    divWrapper.innerHTML = `
+      <div class="section-heading">
+        <h1>${val || "All Books"}</h1>
+      </div>
+      <div class="books-list"></div>
+    `;
 
-    const h1 = document.createElement("h1");
-    h1.textContent = val ? val : "All Books";
-
-    sectionHeading.appendChild(h1);
-
-    const booksList = document.createElement("div");
-    booksList.classList.add("books-list");
-
+    const booksList = divWrapper.querySelector(".books-list");
     const booksData = await fetchBook(val, filter);
 
     booksData.forEach((book) => {
-      const bookContainer = createBookContainer(
-        book.title,
-        book.publication,
-        book.author
+      booksList.appendChild(
+        createBookContainer(book)
       );
-      booksList.appendChild(bookContainer);
     });
-
-    divWrapper.appendChild(sectionHeading);
-    divWrapper.appendChild(booksList);
 
     section.appendChild(divWrapper);
     mainElement.appendChild(section);
@@ -288,42 +234,34 @@ const appendSectionsToMainFilter = async (val, filter) => {
     console.error("Error appending sections to main:", error);
   }
 };
+
 
 const appendSectionsToMainSearch = async (value) => {
   try {
     const mainElement = document.querySelector("main");
     mainElement.innerHTML = "";
-    const section = document.createElement("section");
 
+    const section = document.createElement("section");
     const divWrapper = document.createElement("div");
 
-    const sectionHeading = document.createElement("div");
-    sectionHeading.classList.add("section-heading");
+    divWrapper.innerHTML = `
+      <div class="section-heading">
+        <h1>Search book related with "${value}"</h1>
+      </div>
+      <div class="books-list"></div>
+    `;
 
-    const h1 = document.createElement("h1");
-    h1.textContent = `Search book related with "${value}"`;
-
-    sectionHeading.appendChild(h1);
-
-    const booksList = document.createElement("div");
-    booksList.classList.add("books-list");
-
-    const booksData1 = await fetchBook(value, "author");
-    const booksData2 = await fetchBook(value, "publication");
-    const booksData3 = await fetchBook(value, "title");
-    const booksData = booksData1.concat(booksData2, booksData3);
+    const booksList = divWrapper.querySelector(".books-list");
+    const fetches = ["author", "publication", "title"].map((filter) =>
+      fetchBook(value, filter)
+    );
+    const booksData = (await Promise.all(fetches)).flat();
 
     booksData.forEach((book) => {
-      const bookContainer = createBookContainer(
-        book.title,
-        book.publication,
-        book.author
+      booksList.appendChild(
+        createBookContainer(book)
       );
-      booksList.appendChild(bookContainer);
     });
-
-    divWrapper.appendChild(sectionHeading);
-    divWrapper.appendChild(booksList);
 
     section.appendChild(divWrapper);
     mainElement.appendChild(section);
@@ -331,6 +269,7 @@ const appendSectionsToMainSearch = async (value) => {
     console.error("Error appending sections to main:", error);
   }
 };
+
 
 document
   .getElementById("searchForm")
@@ -345,3 +284,47 @@ document
     const newUrl = `?value=${encodedSearchTerm}`;
     window.location.href = newUrl;
   });
+
+  
+const view_details = async (title) => {
+  window.location.href = `bookDetail/bookdetail.html?title=${title}`;
+  // console.log(title);
+  const book= await fetchBook(title, 'title');
+  const mainElement = document.getElementById("book_detail");
+  console.log(mainElement);
+  mainElement.innerHTML = "";
+
+  mainElement.innerHTML = `
+  <section class="book-detail-section">
+      <div class="wrapper">
+        <div class="book-img">
+          <img src="../assets/image/programming_with_c.jpg" alt="programming_with_c">
+        </div>
+        <div class="book-details">
+          <h1 class="book-title">
+            ${book.title}
+          </h1>
+          <p class="book-author">
+            Author: <span>Edwin J. Elton, Martin J. Gruber, Stephen J. Brown, William N. Goetzmann</span>
+          </p>
+          <p class="book-publication">
+            Publication: <span>Wiley</span> 
+          </p>
+          <p class="book-edition">
+            Edition: <span>Third Edition</span>
+          </p>
+          <p class="book-category">
+            Category: <span><a href="">Computer Science and Engineering</a></span> </p>
+          <p class="book-qnty">
+            In Stock: <span>5 Copies</span>
+          </p>
+          <p class="book-isbn">ISBN: <span>1054515154</span></p>
+          <div class="btn-user">
+            <button class="book-req-btn">Request for Book</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  `;
+};

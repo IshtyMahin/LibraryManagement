@@ -40,7 +40,10 @@
   width: 200px;
   height: 60px;
 }
-
+.logo:hover a{
+  rotate: 360deg;
+  transition: all 0.7s ease-in-out;
+}
 .logo a {
   width: 100%;
   height: 100%;
@@ -106,7 +109,7 @@
   justify-content: center;
   gap: 10px;
   height: 38px;
-  width: 100px;
+  width: 110px;
   cursor: pointer;
   border-radius: 6px;
   background-color: rgb(206, 203, 203);
@@ -181,7 +184,7 @@
 }
 
 main {
-  margin-top: 63px;
+  margin-top: 109px;
 }
 /* ------------------------------------------------------------------------------------------ */
 .book-detail-section {
@@ -265,53 +268,6 @@ main {
   background-color: var(--secondary-color);
   color: white;
 }
-.btn-user {
-  display: flex;
-  gap: 20px;
-}
-
-a {
-  text-decoration: none;
-}
-#loading-spinner {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  background: #d2e8cc;
-  justify-content: center;
-  align-items: center;
-  z-index: 50; 
-}
-
-#loading-spinner .spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid #016a3f; 
-  border-top: 4px solid #b6da9c81;
-  border-radius: 50%;
-  animation: spin 1s linear infinite; 
-}
-main{
-  height: 100vh;
-  background-color: #d2e8cc;
-}
-.hidden{
-  display: none !important;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .btn-admin {
   display: flex;
   gap: 20px;

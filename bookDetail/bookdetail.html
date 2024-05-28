@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RMSTU Library</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RMSTU Library</title>
+    <link rel="stylesheet" href="./bookdetailstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-bar">
+        <div class="nav-top">
+          <div class="logo">
+            <a href="/">
+              <!-- <img src="" alt="logo"> -->
+              RMSTU LIBRARY
+            </a>
+          </div>
+          <div class="searchbar">
+            <div class="header-search">
+              <form id="searchForm">
+                <div class="input-group">
+                  <input
+                    class="form-control new-input"
+                    name="term"
+                    autocomplete="off"
+                    type="text"
+                    value
+                    placeholder="Search by book name, author or publication"
+                    aria-label="Search"
+                    aria-describedby="basic-addon2"
+                    required
+                  />
+                  <input
+                    type="hidden"
+                    id="js--search-filter-input"
+                    value="ALL"
+                    name="search_type"
+                  />
+                  <div class="search-btn">
+                    <button class="btn" type="submit">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="sign_in">
+            <a class="user-menu" href="../loginPage/login.html">
+              <i class="fa-regular fa-user"></i>
+              <span>Sign in</span>
+            </a>
+          </div>
+          <a
+            class="user-menu"
+            onclick="handleLogout()"
+            href="#"
+            class="profile-item"
+            >Logout</a
+          >
+        </div>
+        <div class="separator"></div>
+      </nav>
+    </header>
+
+    <div id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+    <main id="book_detail"></main>
+    <script src="bookdetails.js"></script>
+  </body>
 </html>

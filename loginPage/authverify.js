@@ -1,6 +1,7 @@
 const authVerifier = async () => {
   try {
     const token = localStorage.getItem("token");
+    console.log(token);
     if (token) {
       const res = await fetch(
         "https://librarymanagementsystem-0vjg.onrender.com/api/authverify",

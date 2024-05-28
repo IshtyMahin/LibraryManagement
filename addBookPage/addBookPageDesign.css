@@ -106,7 +106,7 @@
   justify-content: center;
   gap: 10px;
   height: 38px;
-  width: 100px;
+  width: 110px;
   cursor: pointer;
   border-radius: 6px;
   background-color: rgb(206, 203, 203);
@@ -123,9 +123,6 @@
 }
 .user-btn.signin {
   display: none;
-}
-.user-btn.logout {
-  /* display: none; */
 }
 .user-menu a {
   text-decoration: none;
@@ -183,96 +180,83 @@
 main {
   margin-top: 63px;
 }
-/* ------------------------------------------------------------------------------------------ */
-.book-detail-section {
+/* --------------------------------------------------------------------------------------------------------------- */
+section {
   background: #d2e8cc;
-  padding: 30px 10% 50px 10%;
 }
-.wrapper {
-  background: #ebf8e8;;
+h1 {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 10px;
+}
+.add-book-form {
   display: flex;
-  gap: 60px;
-  padding: 40px 30px;
-  box-shadow: 7px 7px 10px -3px #9c9c9c;
+  justify-content: center;
+  padding: 20px 0 30px 0 ;
 }
-.book-img {
-  width: 35%;
-  height: auto;
-  border: 1px solid rgba(79, 78, 78, 0.292);
+.add-book-form form {
+  width: 50%;
 }
-.book-img img {
+fieldset {
   width: 100%;
-  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
 }
-.book-details {
-  width: calc(100% - 35% - 60px);
+.input-file-box {
+  color: #016A3F;
+  margin: 20px 0;
+  font-size: 20px;
 }
-.book-details p{
-  margin-top: 10px;
+.input-box label{
+  display: block;
+  color: #016A3F;
+  margin: 5px 0;
+  font-size: 20px;
 }
-.book-title {
-  font-size: 40px;
+.input-box input {
+  width: 100%;
+  font-size: 20px;
 }
 
-.book-author{
-  font-size: 22px;
-  color: rgb(67, 66, 66);
-}
-.book-author span{
-  font-size: 25px;
-  font-weight: 600;
-  color: black;
-}
-.book-publication,
-.book-category,
-.book-edition,
-.book-qnty,
-.book-isbn{
+.input-box input,
+.input-box select{
+  width: 100%;
+  /* background: transparent; */
+  /* border: 2px solid black; */
   font-size: 20px;
-  color: rgb(67, 66, 66);
 }
-.book-publication span,
-.book-category span,
-.book-edition span,
-.book-qnty span,
-.book-isbn span{
-  font-size: 22px;
-  font-weight: 500;
-  color: black;
+.input-box select{
+  cursor: pointer;
 }
-.book-category span a{
-  transition: all .5s ease-in-out;
-  text-decoration: none;
-  color: black;
-}
-.book-category span a:hover{
-  text-decoration: underline;
-  color: var(--primary-color);
-}
-.book-req-btn {
+
+.book-add-btn{
+  margin: 0 auto;
   margin-top: 30px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
   transition: all .5s ease-in-out;
-  border: 2px solid var(--secondary-color);
-  color: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
   font-weight: 600;
   border-radius: 7px;
-  padding: 12px 30px;
-}
-
-.book-req-btn:hover {
-  background-color: var(--secondary-color);
-  color: white;
-}
-.btn-user {
+  padding: 10px 40px;
   display: flex;
-  gap: 20px;
+  justify-content: center;
+}
+.book-add-btn:hover {
+  color: white;
+  background-color:var(--primary-color);
+}
+.input-file-box input {
+  font-size: 20px;
 }
 
-a {
-  text-decoration: none;
+.input-box input::-webkit-outer-spin-button,
+.input-box input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
+
 #loading-spinner {
   display: none;
   position: fixed;
@@ -310,34 +294,4 @@ main{
   100% {
     transform: rotate(360deg);
   }
-}
-
-.btn-admin {
-  display: flex;
-  gap: 20px;
-}
-
-.book-edit-btn,
-.book-delete-btn {
-  margin-top: 30px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: all .5s ease-in-out;
-  border: 2px solid orange;
-  color: orange;
-  font-weight: 600;
-  border-radius: 7px;
-  padding: 12px 30px;
-}
-.book-edit-btn:hover {
-  color: white;
-  background-color: orange;
-}
-.book-delete-btn {
-  border: 2px solid red;
-  color: red;
-}
-.book-delete-btn:hover {
-  color: white;
-  background-color: red;
 }

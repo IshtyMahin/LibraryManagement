@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RMSTU Library</title>
+  <link rel="stylesheet" href="./adminBookDetailStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <nav class="nav-bar">
+      <div class="nav-top">
+        <div class="logo">
+          <a href="">
+            <!-- <img src="" alt="logo"> -->
+            RMSTU LIBRARY
+            </a>
+        </div>
+        <div class="searchbar">
+          <div class="header-search">
+            <form action="#">
+              <div class="input-group">
+                <input class="form-control new-input" name="term" autocomplete="off" type="text" value placeholder="Search by book name, author or publication" aria-label="Search" aria-describedby="basic-addon2" required>
+                <input type="hidden" id="js--search-filter-input" value="ALL" name="search_type">
+                <div class="search-btn">
+                  <button class="btn" type="submit"> 
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="user-btn signin">
+          <a class="user-menu" href="../loginPage/login.html">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            <span>Sign in</span>
+          </a>
+        </div>
+        <div class="user-btn logout">
+          <a class="user-menu" href="">
+            <i class="fa-regular fa-user"></i>
+            <span>Add Book</span>
+          </a>
+          <a class="user-menu" href="">
+            <span>Log out</span>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="nav-down">
+        <ul class="dept-list">
+          <li class="dept-name">
+            <a href="">All</a>
+          </li>
+          <li class="dept-name">
+            <a href="">CSE</a>
+          </li>
+          <li class="dept-name">
+            <a href="">MGT</a>
+          </li>
+          <li class="dept-name">
+            <a href="">THM</a>
+          </li>
+          <li class="dept-name">
+            <a href="">FES</a>
+          </li>
+          <li class="dept-name">
+            <a href="">FMRT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="book-detail-section">
+      <div class="wrapper">
+        <div class="book-img">
+          <img src="../assets/image/programming_with_c.jpg" alt="programming_with_c">
+        </div>
+        <div class="book-details">
+          <h1 class="book-title">
+            Modern Portfolio Theory and Investment Analysis
+          </h1>
+          <p class="book-author">
+            Author: <span>Edwin J. Elton, Martin J. Gruber, Stephen J. Brown, William N. Goetzmann</span>
+          </p>
+          <p class="book-publication">
+            Publication: <span>Wiley</span> 
+          </p>
+          <p class="book-edition">
+            Edition: <span>Third Edition</span>
+          </p>
+          <p class="book-category">
+            Category: <span><a href="">Computer Science and Engineering</a></span> </p>
+          <p class="book-qnty">
+            In Stock: <span>5 Copies</span>
+          </p>
+          <p class="book-isbn">ISBN: <span>1054515154</span></p>
+          <div class="btn-admin">
+            <button class="book-edit-btn">Edit Book</button>
+            <button class="book-delete-btn">Delete Book</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</body>
+</html>

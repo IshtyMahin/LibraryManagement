@@ -2,6 +2,7 @@
 
 const handleRegistration = (event) => {
   event.preventDefault();
+
   const name = getValue("username");
   const regId = parseInt(getValue("reg-id"));
   const session = getValue("session");
@@ -25,6 +26,7 @@ const handleRegistration = (event) => {
   console.log(info);
 
   if (password == confirm_password) {
+    
     fetch("https://librarymanagementsystem-0vjg.onrender.com/api/register", {
       method: "POST",
       headers: {
@@ -53,10 +55,18 @@ const handleRegistration = (event) => {
             document.querySelector(".login-link").click();
             event.preventDefault();
           });
-      }).catch((err) => { console.log(err);})
-
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     
   }
+  else {
+    alert("Passwords do not match");
+
+    return;
+  }
+
 };
 
 const getValue = (id) => {
@@ -66,6 +76,7 @@ const getValue = (id) => {
 
 const handleLogin = (event) => {
   event.preventDefault();
+  
   const regId = parseInt(getValue("reg_id"));
   const password = getValue("pass");
   const reg = {
@@ -96,10 +107,11 @@ const handleLogin = (event) => {
     .catch((error) => {
       // document.getElementById("login-error").textContent = error.message;
     });
+
 };
 
-
 const handleLogout = async () => {
+
   fetch("https://librarymanagementsystem-0vjg.onrender.com/api/logout", {
     method: "DELETE",
   })
@@ -114,4 +126,5 @@ const handleLogout = async () => {
     .catch((error) => {
       document.getElementById("login-error").textContent = error.message;
     });
+
 };

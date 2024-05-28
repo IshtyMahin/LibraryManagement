@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Book</title>
+    <link rel="stylesheet" href="../addBookPage/addBookPageDesign.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-bar">
+        <div class="nav-top">
+          <div class="logo">
+            <a href="/"> RMSTU LIBRARY </a>
+          </div>
+          <div class="searchbar">
+            <div class="header-search">
+              <form action="#">
+                <div class="input-group">
+                  <input
+                    class="form-control new-input"
+                    name="term"
+                    autocomplete="off"
+                    type="text"
+                    value
+                    placeholder="Search by book name, author or publication"
+                    aria-label="Search"
+                    aria-describedby="basic-addon2"
+                    required
+                  />
+                  <input
+                    type="hidden"
+                    id="js--search-filter-input"
+                    value="ALL"
+                    name="search_type"
+                  />
+                  <div class="search-btn">
+                    <button class="btn" type="submit">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="user-btn logout">
+            <a class="user-menu" href="">
+              <span>Log out</span>
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+          </div>
+        </div>
+        <div class="separator"></div>
+      </nav>
+    </header>
+    <div id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+    <main>
+      <section>
+        <h1>Edit Book</h1>
+        <div class="add-book-form">
+          <form id="editBookForm">
+            <fieldset>
+              <div class="input-box">
+                <label>ISBN: </label>
+                <input type="number" name="ISBN" readonly required />
+              </div>
+              <div class="input-box">
+                <label>Book Name: </label>
+                <input type="text" name="title" required />
+              </div>
+              <div class="input-box">
+                <label>Edition: </label>
+                <input type="number" name="edition" />
+              </div>
+              <div class="input-box">
+                <label>Author Name: </label>
+                <input type="text" name="author" required />
+              </div>
+              <div class="input-box">
+                <label>Publication: </label>
+                <input type="text" name="publication" required />
+              </div>
+              <div class="input-box">
+                <label>Quantity: </label>
+                <input type="number" name="qty" required />
+              </div>
+              <div class="input-box">
+                <label for="category">Category: </label>
+              <select id="category" name="category">
+                <option>Computer Science and Engineering</option>
+                <option>Management</option>
+                <option>Tourism and Hospitality Management</option>
+                <option>Forestry and Environmental Science</option>
+                <option>Fisheries and Marine Resources Technology</option>
+              </select>
+              </div>
+              <div class="input-box">
+                <label>Shelf NO: </label>
+                <input type="number" name="shelfNo" required />
+              </div>
+              <div class="input-box">
+                <label>Shelve NO: </label>
+                <input type="number" name="shelveNo" required />
+              </div>
+              <div class="input-file-box">
+                <label for="myfile">Select a file: </label>
+                <input type="file" id="myfile" name="cover" />
+              </div>
+              <button type="submit" class="book-add-btn">Add Book</button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="editBook.js"></script>
+  </body>
+</html>
