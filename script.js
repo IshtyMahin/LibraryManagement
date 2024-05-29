@@ -165,7 +165,7 @@ const createBookContainer = (book) => {
   container.classList.add("container");
 
   container.innerHTML = `
-    <div class="book">
+    <div onclick='view_details("${title}")' class="book">
       <div class="book-img">
         <img src=${book.cover} alt="book-image">
       </div>
