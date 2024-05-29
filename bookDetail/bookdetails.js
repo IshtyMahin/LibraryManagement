@@ -92,7 +92,7 @@ window.addEventListener("load", async () => {
           <p class="book-isbn">ISBN: <span>${book.ISBN}</span></p>
           
           ${
-            userType === "masterAdmin"
+            userType === "masteradmin"
               ? `<div class="btn-admin">
             <button class="book-edit-btn">
               <a href="/EditBook/EditBookPage.html?id=${book.ISBN}">
