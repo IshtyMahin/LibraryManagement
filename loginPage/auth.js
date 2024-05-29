@@ -2,7 +2,7 @@
 
 const handleRegistration = (event) => {
   event.preventDefault();
-
+  showSpinner()
   const name = getValue("username");
   const regId = getValue("reg-id");
   const session = getValue("session");
@@ -52,6 +52,7 @@ const handleRegistration = (event) => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+            hideSpinner()
             alert("Successfully Register your account")
             document.querySelector(".login-link").click();
             event.preventDefault();
@@ -59,12 +60,14 @@ const handleRegistration = (event) => {
       })
       .catch((err) => {
         console.log(err);
+        hideSpinner()
         alert(err);
         // alert(data.errorMessage);
       });
     
   }
   else {
+    hideSpinner()
     alert("Passwords do not match");
 
     return;
@@ -79,7 +82,7 @@ const getValue = (id) => {
 
 const handleLogin = (event) => {
   event.preventDefault();
-  
+  showSpinner()
   const regId = getValue("reg_id");
   const password = getValue("pass");
   const reg = {
@@ -102,23 +105,27 @@ const handleLogin = (event) => {
       if (data.token) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("userType", data.type);
+        hideSpinner()
         alert("Successfully logged in")
         window.location.href = "/";
         console.log(data);
       } else {
         console.log(data.message);
+        hideSpinner()
         alert(data.message);
         // document.getElementById("login-error").textContent = data.error;
       }
     })
     .catch((error) => {
+      hideSpinner()
+      alert(error.message);
       // document.getElementById("login-error").textContent = error.message;
     });
 
 };
 
 const handleLogout = async () => {
-
+  showSpinner()
   fetch("https://librarymanagementsystem-0vjg.onrender.com/api/logout", {
     method: "DELETE",
   })
@@ -128,9 +135,11 @@ const handleLogout = async () => {
 
       localStorage.removeItem("user_id");
       localStorage.removeItem("token");
+      hideSpinner();
       window.location.href = "/";
     })
     .catch((error) => {
+      hideSpinner()
       document.getElementById("login-error").textContent = error.message;
     });
 
