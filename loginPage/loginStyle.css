@@ -110,6 +110,14 @@ body {
 .input-box input:valid {
   border-bottom-color: var(--primary-color);
 }
+.input-box input::-webkit-outer-spin-button,
+.input-box input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-box input[type=number] {
+  -moz-appearance: textfield;
+}
 
 .input-box label {
   position: absolute;
