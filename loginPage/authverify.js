@@ -4,7 +4,7 @@ const authVerifier = async () => {
     console.log(token);
     if (token) {
       const res = await fetch(
-        "https://librarymanagementsystem-0vjg.onrender.com/api/authverify",
+        "https://librarymanagementsystem-rmstu.vercel.app/api/authverify",
         {
           method: "POST",
           headers: {

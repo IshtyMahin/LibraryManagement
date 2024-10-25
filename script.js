@@ -13,7 +13,7 @@ const authVerifier = async () => {
     const token = localStorage.getItem("token");
     if (token) {
       const res = await fetch(
-        "https://librarymanagementsystem-0vjg.onrender.com/api/authverify",
+        "https://librarymanagementsystem-rmstu.vercel.app/api/authverify",
         {
           method: "POST",
           headers: {
@@ -39,9 +39,9 @@ const fetchBook = async (val, filter) => {
   try {
     let url;
     if (val) {
-      url = `https://librarymanagementsystem-0vjg.onrender.com/api/books?filter=${filter}&value=${val}`;
+      url = `https://librarymanagementsystem-rmstu.vercel.app/api/books?filter=${filter}&value=${val}`;
     } else {
-      url = `https://librarymanagementsystem-0vjg.onrender.com/api/books`;
+      url = `https://librarymanagementsystem-rmstu.vercel.app/api/books`;
     }
     console.log(url);
     const res = await fetch(url, {

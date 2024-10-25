@@ -26,7 +26,7 @@ const handleRegistration = (event) => {
 
   if (password == confirm_password) {
     
-    fetch("https://librarymanagementsystem-0vjg.onrender.com/api/register", {
+    fetch("https://librarymanagementsystem-rmstu.vercel.app/api/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const handleRegistration = (event) => {
           alert(data.Error);
           return;
         }
-        fetch("https://librarymanagementsystem-0vjg.onrender.com/api/users", {
+        fetch("https://librarymanagementsystem-rmstu.vercel.app/api/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -91,7 +91,7 @@ const handleLogin = (event) => {
 
   console.log(reg,password);
 
-  fetch("https://librarymanagementsystem-0vjg.onrender.com/api/login", {
+  fetch("https://librarymanagementsystem-rmstu.vercel.app/api/login", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(reg),
@@ -125,7 +125,7 @@ const handleLogin = (event) => {
 
 const handleLogout = async () => {
 
-  fetch("https://librarymanagementsystem-0vjg.onrender.com/api/logout", {
+  fetch("https://librarymanagementsystem-rmstu.vercel.app/api/logout", {
     method: "DELETE",
   })
     .then((res) => res.json())

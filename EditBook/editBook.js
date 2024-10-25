@@ -40,7 +40,7 @@ async function fetchBookDetails(isbn) {
     try {
       console.log(isbn);
     const response = await fetch(
-      `https://librarymanagementsystem-0vjg.onrender.com/api/books/${isbn}`
+      `https://librarymanagementsystem-rmstu.vercel.app/api/books/${isbn}`
     );
     if (!response.ok) {
       throw new Error("Book not found");
@@ -113,7 +113,7 @@ async function editBook(bookData) {
   const isbn = document.querySelector('input[name="ISBN"]').value;
   try {
     const response = await fetch(
-      `https://librarymanagementsystem-0vjg.onrender.com/api/books/${isbn}`,
+      `https://librarymanagementsystem-rmstu.vercel.app/api/books/${isbn}`,
       {
         method: "PATCH",
         headers: {
