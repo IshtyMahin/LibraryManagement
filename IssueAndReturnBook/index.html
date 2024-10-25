@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="navabar">
+        <nav class="nav-bar">
+          <div class="nav-top">
+            <div class="logo">
+              <a href="/index.html">
+                RMSTU LIBRARY
+              </a>
+            </div>
+            <div id="addBook" style="display: none;">
+              <a class="user-menu" href="addBookPage/addBookPage.html">
+                <span>Add Book</span>
+              </a>
+            </div>
+            <div id="admin" style="display: none;">
+              <a class="user-menu" href="IssueAndReturnBook/index.html">
+                <span>Admin</span>
+              </a>
+            </div>
+            <a
+              class="user-menu"
+              onclick="handleLogout()"
+              href="#"
+              class="profile-item"
+              >Logout</a
+            >
+            
+          </div>
+     
+        </nav>
+      </header>
+    <div class="container">
+        <h1>Library Book Management</h1>
+        <div class="book-actions">
+            <div class="issue-section">
+                <h2>Issue Book</h2>
+                <input type="text" id="issue-user-id" placeholder="User ID" />
+                <input type="text" id="issue-book-ids" placeholder="Book IDs (comma-separated)" />
+                <button id="issue-button">Issue</button>
+                <div id="issue-message"></div>
+            </div>
+            
+            <div class="return-section">
+                <h2>Return Book</h2>
+                <input type="text" id="return-user-id" placeholder="User ID" />
+                <input type="text" id="return-book-ids" placeholder="Book IDs (comma-separated)" />
+                <button id="return-button">Return</button>
+                <div id="return-message"></div>
+            </div>
+        </div>
+    </div>
+    <footer
+    style="background-color: var(--primary-color); color: white; padding: 2px 20px; text-align: center; position: fixed; bottom: 0; width:100vw">
+    <p>&copy; 2024 | RMSTU Library Management System. All Rights Reserved.</p>
+    <p><b>Developed by Zero or One</b></p>
+  </footer>
+    <script src="script.js"></script>
+</body>
+</html>

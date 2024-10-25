@@ -136,6 +136,7 @@ window.addEventListener("load", async () => {
     document.getElementById("sign_in").style.display = "none";
     if (userType == "masteradmin") { 
       document.getElementById("addBook").style.display = "block";
+      document.getElementById("admin").style.display = "block";
     }
 
   } else {
