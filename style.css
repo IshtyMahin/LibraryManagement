@@ -169,6 +169,8 @@
 
 main {
   margin-top: 121px;
+  padding-bottom: 20px;
+  min-height: 100vh;
 }
 /* ------------------------------------------------------------------------- */
 /* all books section  */
@@ -316,7 +318,7 @@ section {
   animation: spin 1s linear infinite; 
 }
 main{
-  height: 100vh;
+   
   background-color: #d2e8cc;
 }
 .hidden{
