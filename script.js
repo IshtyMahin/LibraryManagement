@@ -35,7 +35,7 @@ const authVerifier = async () => {
 };
 
 const fetchBook = async (val, filter) => {
-  console.log(val, filter);
+  //console.log(val, filter);
   try {
     let url;
     if (val) {
@@ -43,7 +43,7 @@ const fetchBook = async (val, filter) => {
     } else {
       url = `https://librarymanagementsystem-rmstu.vercel.app/api/books`;
     }
-    console.log(url);
+    //console.log(url);
     const res = await fetch(url, {
       method: "GET",
     });
@@ -130,7 +130,7 @@ const appendSectionsToMain = async () => {
 window.addEventListener("load", async () => {
   showSpinner();
   const userType = await authVerifier();
-  console.log(userType);
+  //console.log(userType);
   if (userType == "masteradmin" || userType == "user") {
     // window.location.href = "/mainPage/";
     document.getElementById("sign_in").style.display = "none";
@@ -144,7 +144,7 @@ window.addEventListener("load", async () => {
   const queryParams = new URLSearchParams(window.location.search);
   let filter = queryParams.get("filter");
   let value = queryParams.get("value");
-  console.log(filter, value);
+  //console.log(filter, value);
 
   if (value == "All books") {
     (value = ""), (filter = "");
@@ -292,10 +292,10 @@ document
   
 const view_details = async (title) => {
   window.location.href = `bookDetail/bookdetail.html?title=${title}`;
-  // console.log(title);
+  // //console.log(title);
   const book= await fetchBook(title, 'title');
   const mainElement = document.getElementById("book_detail");
-  console.log(mainElement);
+  //console.log(mainElement);
   mainElement.innerHTML = "";
 
   mainElement.innerHTML = `

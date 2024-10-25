@@ -24,6 +24,8 @@ const authVerifier = async () => {
       );
       if (res.ok) {
         const data = await res.json();
+        // console.log(data);
+        
         return data.type;
       } else {
         throw new Error("Authentication verification failed");
@@ -38,7 +40,7 @@ const authVerifier = async () => {
 window.addEventListener("load", async () => {
   showSpinner()
   const userType = await authVerifier();
-  console.log(userType);
+  // console.log(userType);
   if (userType == "masteradmin" || userType == "user") {
     document.getElementById("sign_in").style.display = "none";
   } else {
@@ -47,7 +49,7 @@ window.addEventListener("load", async () => {
 
   const queryParams = new URLSearchParams(window.location.search);
   let title = queryParams.get("title");
-  console.log(title);
+  //console.log(title);
   let book = {};
   const url = `https://librarymanagementsystem-rmstu.vercel.app/api/books?filter=title&value=${title}`;
   const res = await fetch(url, {
@@ -59,10 +61,10 @@ window.addEventListener("load", async () => {
   } else {
     throw new Error("Failed to fetch books");
   }
-  console.log(book);
+  //console.log(book);
   if (book) {
     const mainElement = document.getElementById("book_detail");
-    console.log(mainElement);
+    //console.log(mainElement);
     mainElement.innerHTML = "";
 
     mainElement.innerHTML = `
@@ -117,7 +119,7 @@ window.addEventListener("load", async () => {
 
 
 async function deleteBook(isbn) {
- console.log(isbn);
+ //console.log(isbn);
   const confirmation = confirm("Are you sure you want to delete this book?");
   if (confirmation) {
     try {
@@ -134,7 +136,7 @@ async function deleteBook(isbn) {
       }
 
       const result = await response.json();
-      console.log("Success:", result);
+      //console.log("Success:", result);
       alert("Book deleted successfully!");
       window.location.href = "/";
     } catch (error) {

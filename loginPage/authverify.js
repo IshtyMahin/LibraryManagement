@@ -1,7 +1,7 @@
 const authVerifier = async () => {
   try {
     const token = localStorage.getItem("token");
-    console.log(token);
+    //console.log(token);
     if (token) {
       const res = await fetch(
         "https://librarymanagementsystem-rmstu.vercel.app/api/authverify",
@@ -15,6 +15,8 @@ const authVerifier = async () => {
       );
       if (res.ok) {
         const data = await res.json();
+        // console.log(data);
+        
         return data.type;
       } else {
         throw new Error("Authentication verification failed");
@@ -27,7 +29,7 @@ const authVerifier = async () => {
 
 window.addEventListener("load", async () => {
   const userType = await authVerifier();
-  console.log(userType);
+  //console.log(userType);
   if (userType == "masteradmin" || userType == "user") {
     window.location.href = "/";
   } else {

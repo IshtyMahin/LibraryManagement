@@ -22,7 +22,7 @@ const handleRegistration = (event) => {
     password: password,
   };
 
-  console.log(info);
+  //console.log(info);
 
   if (password == confirm_password) {
     
@@ -35,8 +35,8 @@ const handleRegistration = (event) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("register");
-        console.log(data);
+        //console.log("register");
+       //console.log(data);
         if (data.Error) {
           alert(data.Error);
           return;
@@ -50,7 +50,7 @@ const handleRegistration = (event) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // //console.log(data);
 
             alert("Successfully Register your account")
             document.querySelector(".login-link").click();
@@ -58,7 +58,7 @@ const handleRegistration = (event) => {
           });
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
 
         alert(err);
         // alert(data.errorMessage);
@@ -89,7 +89,7 @@ const handleLogin = (event) => {
     password: password,
   };
 
-  console.log(reg,password);
+  //console.log(reg,password);
 
   fetch("https://librarymanagementsystem-rmstu.vercel.app/api/login", {
     method: "POST",
@@ -97,19 +97,21 @@ const handleLogin = (event) => {
     body: JSON.stringify(reg),
   })
     .then((res) => {
-      console.log(res);
+      //console.log(res);
       return res.json();
     })
     .then((data) => {
+      //console.log(data);
+      
       if (data.token) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("userType", data.type);
      
         alert("Successfully logged in")
         window.location.href = "/";
-        console.log(data);
+        //console.log(data);
       } else {
-        console.log(data.message);
+        //console.log(data.message);
 
         alert(data.message);
         // document.getElementById("login-error").textContent = data.error;
@@ -130,7 +132,7 @@ const handleLogout = async () => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      //console.log(data);
 
       localStorage.removeItem("user_id");
       localStorage.removeItem("token");

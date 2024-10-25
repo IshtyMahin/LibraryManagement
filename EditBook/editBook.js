@@ -14,7 +14,7 @@ window.addEventListener("load", async () => {
   const queryParams = new URLSearchParams(window.location.search);
   let id = queryParams.get("id");
   if (id) {
-    console.log(id);
+    //console.log(id);
     fetchBookDetails(id);
   } else {
     alert("No ISBN provided in the URL");
@@ -38,7 +38,7 @@ function fillForm(book) {
 
 async function fetchBookDetails(isbn) {
     try {
-      console.log(isbn);
+      //console.log(isbn);
     const response = await fetch(
       `https://librarymanagementsystem-rmstu.vercel.app/api/books/${isbn}`
     );
@@ -46,7 +46,7 @@ async function fetchBookDetails(isbn) {
       throw new Error("Book not found");
     }
         const book = await response.json();
-        console.log(book);
+        //console.log(book);
     fillForm(book[0]);
   } catch (error) {
     console.error("Error fetching book details:", error);
@@ -129,7 +129,7 @@ async function editBook(bookData) {
     }
 
     const result = await response.json();
-    console.log("Success:", result);
+    //console.log("Success:", result);
       alert("Book edited successfully!");
       window.location.href = "/";
   } catch (error) {
