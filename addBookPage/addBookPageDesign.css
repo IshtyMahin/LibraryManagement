@@ -36,6 +36,13 @@
   padding: 0 8%;
 }
 
+.link{
+  display: flex;
+  justify-content: space-between;
+  gap: 5PX;
+  align-items: center;
+}
+
 .logo {
   width: 200px;
   height: 60px;

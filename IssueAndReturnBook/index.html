@@ -15,23 +15,31 @@
                 RMSTU LIBRARY
               </a>
             </div>
-            <div id="addBook" style="display: none;">
-              <a class="user-menu" href="addBookPage/addBookPage.html">
-                <span>Add Book</span>
-              </a>
+           
+            <div class="link">
+                <div id="home">
+                    <a class="user-menu" href="/index.html">
+                      <span>Home</span>
+                    </a>
+                  </div>
+                  <div id="addBook">
+                    <a class="user-menu" href="/addBookPage/addBookPage.html">
+                      <span>Add Book</span>
+                    </a>
+                  </div>
+                  <div id="admin" style="display: none;">
+                    <a class="user-menu" href="IssueAndReturnBook/index.html">
+                      <span>Admin</span>
+                    </a>
+                  </div>
+                  <a
+                    class="user-menu"
+                    onclick="handleLogout()"
+                    href="#"
+                    class="profile-item"
+                    >Logout</a
+                  >
             </div>
-            <div id="admin" style="display: none;">
-              <a class="user-menu" href="IssueAndReturnBook/index.html">
-                <span>Admin</span>
-              </a>
-            </div>
-            <a
-              class="user-menu"
-              onclick="handleLogout()"
-              href="#"
-              class="profile-item"
-              >Logout</a
-            >
             
           </div>
      
@@ -63,5 +71,6 @@
     <p><b>Developed by Zero or One</b></p>
   </footer>
     <script src="script.js"></script>
+    <script src="/loginPage/auth.js"
 </body>
 </html>

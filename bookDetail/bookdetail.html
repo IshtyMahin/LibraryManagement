@@ -24,49 +24,26 @@
               RMSTU LIBRARY
             </a>
           </div>
-          <div class="searchbar">
-            <div class="header-search">
-              <form id="searchForm">
-                <div class="input-group">
-                  <input
-                    class="form-control new-input"
-                    name="term"
-                    autocomplete="off"
-                    type="text"
-                    value
-                    placeholder="Search by book name, author or publication"
-                    aria-label="Search"
-                    aria-describedby="basic-addon2"
-                    required
-                  />
-                  <input
-                    type="hidden"
-                    id="js--search-filter-input"
-                    value="ALL"
-                    name="search_type"
-                  />
-                  <div class="search-btn">
-                    <button class="btn" type="submit">
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
+          <div class="link">
+            <div id="home">
+              <a class="user-menu" href="/index.html">
+                <span>Home</span>
+              </a>
             </div>
+            <div id="sign_in">
+              <a class="user-menu" href="../loginPage/login.html">
+                <i class="fa-regular fa-user"></i>
+                <span>Sign in</span>
+              </a>
+            </div>
+            <a
+              class="user-menu"
+              onclick="handleLogout()"
+              href="#"
+              class="profile-item"
+              >Logout</a
+            >
           </div>
-          <div id="sign_in">
-            <a class="user-menu" href="../loginPage/login.html">
-              <i class="fa-regular fa-user"></i>
-              <span>Sign in</span>
-            </a>
-          </div>
-          <a
-            class="user-menu"
-            onclick="handleLogout()"
-            href="#"
-            class="profile-item"
-            >Logout</a
-          >
         </div>
         <div class="separator"></div>
       </nav>
