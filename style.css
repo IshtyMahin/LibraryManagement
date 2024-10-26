@@ -174,13 +174,13 @@
 
 main {
   margin-top: 121px;
-  /* padding-bottom: 20px; */
+  /* padding-bottom: 10px; */
   min-height: 100vh;
 }
 /* ------------------------------------------------------------------------- */
 /* all books section  */
 section {
-  padding: 0 7%;
+  padding: 2% 7%;
   background: #d2e8cc;
 }
 .section-heading {
