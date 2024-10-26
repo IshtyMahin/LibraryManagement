@@ -135,6 +135,7 @@ window.addEventListener("load", async () => {
     // window.location.href = "/mainPage/";
     document.getElementById("sign_in").style.display = "none";
     if (userType == "masteradmin") { 
+      document.getElementById("profile").style.display = "none";
       document.getElementById("addBook").style.display = "block";
       document.getElementById("admin").style.display = "block";
     }

@@ -15,7 +15,7 @@ const authVerifier = async () => {
       );
       if (res.ok) {
         const data = await res.json();
-        // console.log(data);
+        console.log(data);
         
         return data.type;
       } else {

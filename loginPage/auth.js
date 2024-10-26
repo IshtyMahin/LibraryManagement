@@ -101,7 +101,8 @@ const handleLogin = (event) => {
       return res.json();
     })
     .then((data) => {
-      //console.log(data);
+      console.log(data.regId);
+      // alert(data)
       
       if (data.token) {
         localStorage.setItem("token", data.token);

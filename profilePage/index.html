@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="navbar">
+      <nav class="nav-bar">
+        <div class="nav-top">
+          <div class="logo">
+            <a href="/index.html">RMSTU LIBRARY</a>
+          </div>
+          <div class="link">
+            <div id="addBook" style="display: none;">
+              <a class="user-menu" href="addBookPage/addBookPage.html"><span>Add Book</span></a>
+            </div>
+            <div id="profile">
+              <a class="user-menu" href="/profilePage/index.html"><span>Profile</span></a>
+            </div>
+            <a class="user-menu" onclick="handleLogout()" href="#" class="profile-item">Logout</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <div id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+
+    <div class="container">
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="profile-image">
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" />
+          </div>
+          <div class="profile-details">
+            <h1 id="name">Loading...</h1>
+            <p><strong>Reg ID:</strong> <span id="regId">Loading...</span></p>
+            <p><strong>Session:</strong> <span id="session">Loading...</span></p>
+            <p><strong>Department:</strong> <span id="dept">Loading...</span></p>
+            <p><strong>Batch:</strong> <span id="batch">Loading...</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="books">
+        <h2>Borrowed Books</h2>
+        <div id="bookList" class="book-list"></div>
+      </div>
+    </div>
+
+    <footer style="background-color: var(--primary-color); color: white; padding: 2px 20px; text-align: center; position: relative; bottom: 0; width:100vw;">
+      <p>&copy; 2024 | RMSTU Library Management System. All Rights Reserved.</p>
+      <p><b>Developed by Zero or One</b></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="/loginPage/auth.js"></script>
+</body>
+
+</html>
