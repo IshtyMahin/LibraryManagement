@@ -58,7 +58,11 @@
           <div class="link">
             <div id="addBook" style="display: none">
               <a class="user-menu" href="addBookPage/addBookPage.html">
-                <i class="fa fa-book" style="overflow-y: hidden;" aria-hidden="true"></i>
+                <i
+                  class="fa fa-book"
+                  style="overflow-y: hidden"
+                  aria-hidden="true"
+                ></i>
 
                 <span>Add Book</span>
               </a>
@@ -71,7 +75,11 @@
             </div>
             <div id="admin" style="display: none">
               <a class="user-menu" href="IssueAndReturnBook/index.html">
-                <i style="overflow-y: hidden;" class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <i
+                  style="overflow-y: hidden"
+                  class="fa fa-graduation-cap"
+                  aria-hidden="true"
+                ></i>
                 <span>Admin</span>
               </a>
             </div>
@@ -162,6 +170,30 @@
         });
       });
     </script>
+    <script>
+      function setActiveLink() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryValue = urlParams.get("value"); 
+
+        const activeCategory = categoryValue || "All books";
+
+        const deptLinks = document.querySelectorAll(".dept-name a");
+
+        deptLinks.forEach((link) => {
+          const linkUrl = new URL(link.href);
+          const linkCategory = linkUrl.searchParams.get("value");
+
+          if (linkCategory === activeCategory) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      setActiveLink();
+    </script>
+
     <script src="../loginPage/auth.js"></script>
     <script src="./script.js"></script>
   </body>

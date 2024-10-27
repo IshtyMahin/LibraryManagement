@@ -111,8 +111,9 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  height: 38px;
-  width: 100px;
+  /* height: 38px;
+  width: 100px; */
+  padding: 5px 7px;
   cursor: pointer;
   border-radius: 6px;
   background-color: rgb(206, 203, 203);

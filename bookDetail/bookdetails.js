@@ -42,7 +42,12 @@ window.addEventListener("load", async () => {
   const userType = await authVerifier();
   // console.log(userType);
   if (userType == "masteradmin" || userType == "user") {
-    document.getElementById("sign_in").style.display = "none";
+
+    if(userType == "masteradmin"){
+          document.getElementById("profile").style.display = "none";
+          document.getElementById("admin").style.display = "block";
+          document.getElementById("addBook").style.display = "block";
+    }
   } else {
     window.location.href = "/loginPage/login.html";
   }

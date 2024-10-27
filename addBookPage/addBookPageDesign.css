@@ -286,7 +286,7 @@ fieldset {
   animation: spin 1s linear infinite; 
 }
 main{
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #d2e8cc;
 }
 .hidden{

@@ -25,38 +25,14 @@
           <div class="logo">
             <a href="/"> RMSTU LIBRARY </a>
           </div>
-          <div class="searchbar">
-            <div class="header-search">
-              <form action="#">
-                <div class="input-group">
-                  <input
-                    class="form-control new-input"
-                    name="term"
-                    autocomplete="off"
-                    type="text"
-                    value
-                    placeholder="Search by book name, author or publication"
-                    aria-label="Search"
-                    aria-describedby="basic-addon2"
-                    required
-                  />
-                  <input
-                    type="hidden"
-                    id="js--search-filter-input"
-                    value="ALL"
-                    name="search_type"
-                  />
-                  <div class="search-btn">
-                    <button class="btn" type="submit">
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
 
           <div class="link">
+            <div id="home">
+              <a class="user-menu" href="/index.html">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <span>Home</span>
+              </a>
+            </div>
             <div id="admin">
               <a class="user-menu" href="/IssueAndReturnBook/index.html">
                 <i
@@ -86,7 +62,7 @@
       </nav>
     </header>
 
-    <main>
+    <main >
       <section>
         <h1>Add a new Book</h1>
         <div class="add-book-form">
@@ -144,7 +120,20 @@
         </div>
       </section>
     </main>
-    
+    <footer
+      style="
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2px 20px;
+        text-align: center;
+        /* position: relative; */
+        bottom: 0;
+        width: 100vw;
+      "
+    >
+      <p>&copy; 2024 | RMSTU Library Management System. All Rights Reserved.</p>
+      <p>Developed by <b>Zero or One</b></p>
+    </footer>
     <script>
       document
         .getElementById("bookForm")

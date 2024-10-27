@@ -352,3 +352,9 @@ main {
     transform: rotate(360deg);
   }
 }
+
+.dept-name:has(> a.active) {
+  font-weight: bold;
+  background-color: #d2e8cc;
+  border-bottom: 3px solid var(--primary-color);
+}

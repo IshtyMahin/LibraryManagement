@@ -4,8 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Book</title>
-    <link rel="icon" type="image/x-icon" href="../assets/image/RMSTU_icon.png">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/image/RMSTU_icon.png"
+    />
     <link rel="stylesheet" href="../addBookPage/addBookPageDesign.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
@@ -14,15 +25,43 @@
           <div class="logo">
             <a href="/"> RMSTU LIBRARY </a>
           </div>
+          <div class="link">
+            <div id="home">
+              <a class="user-menu" href="/index.html">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <span>Home</span>
+              </a>
+            </div>
+            <div id="addBook" >
+              <a class="user-menu" href="addBookPage/addBookPage.html">
+                <i class="fa fa-book" style="overflow-y: hidden;" aria-hidden="true"></i>
 
-          <div class="user-btn logout">
-            <a
-            class="user-menu"
-            onclick="handleLogout()"
-            href="#"
-            class="profile-item"
-            >Logout</a
-          >
+                <span>Add Book</span>
+              </a>
+            </div>
+            <div id="admin">
+              <a class="user-menu" href="/IssueAndReturnBook/index.html">
+                <i
+                  style="overflow-y: hidden"
+                  class="fa fa-graduation-cap"
+                  aria-hidden="true"
+                ></i>
+                <span>Admin</span>
+              </a>
+            </div>
+            <div class="user-btn logout">
+              <a
+                class="user-menu"
+                onclick="handleLogout()"
+                href="#"
+                class="profile-item"
+                ><i
+                class="fa fa-power-off"
+                style="overflow-y: hidden"
+                aria-hidden="true"
+              ></i>Logout</a
+              >
+            </div>
           </div>
         </div>
         <div class="separator"></div>
@@ -63,13 +102,13 @@
               </div>
               <div class="input-box">
                 <label for="category">Category: </label>
-              <select id="category" name="category">
-                <option>Computer Science and Engineering</option>
-                <option>Management</option>
-                <option>Tourism and Hospitality Management</option>
-                <option>Forestry and Environmental Science</option>
-                <option>Fisheries and Marine Resources Technology</option>
-              </select>
+                <select id="category" name="category">
+                  <option>Computer Science and Engineering</option>
+                  <option>Management</option>
+                  <option>Tourism and Hospitality Management</option>
+                  <option>Forestry and Environmental Science</option>
+                  <option>Fisheries and Marine Resources Technology</option>
+                </select>
               </div>
               <div class="input-box">
                 <label>Shelf NO: </label>
@@ -89,6 +128,20 @@
         </div>
       </section>
     </main>
+    <footer
+      style="
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2px 20px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100vw;
+      "
+    >
+      <p>&copy; 2024 | RMSTU Library Management System. All Rights Reserved.</p>
+      <p>Developed by <b>Zero or One</b></p>
+    </footer>
 
     <script src="editBook.js"></script>
     <script src="../loginPage/auth.js"></script>
