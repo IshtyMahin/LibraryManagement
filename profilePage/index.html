@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Profile</title>
   <link rel="stylesheet" href="style.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 </head>
 <body>
     <header id="navbar">
@@ -17,10 +24,11 @@
             <div id="addBook" style="display: none;">
               <a class="user-menu" href="addBookPage/addBookPage.html"><span>Add Book</span></a>
             </div>
-            <div id="profile">
-              <a class="user-menu" href="/profilePage/index.html"><span>Profile</span></a>
-            </div>
-            <a class="user-menu" onclick="handleLogout()" href="#" class="profile-item">Logout</a>
+           
+            <a class="user-menu" onclick="handleLogout()" href="#" class="profile-item">
+              <i class="fa fa-power-off" style="overflow-y: hidden;" aria-hidden="true"></i>
+              <span>Logout</span>
+</a>
           </div>
         </div>
       </nav>
@@ -33,9 +41,9 @@
     <div class="container">
       <div class="profile-card">
         <div class="profile-header">
-          <div class="profile-image">
+           <div class="profile-image">
             <img src="/assets/image/profile3.png" alt="Profile Picture" />
-          </div>
+          </div> 
           <div class="profile-details">
             <h1 id="name">Loading...</h1>
             <p><strong>Reg ID:</strong> <span id="regId">Loading...</span></p>

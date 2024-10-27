@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library System</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 </head>
 <body>
     <header id="navabar">
@@ -19,11 +27,13 @@
             <div class="link">
                 <div id="home">
                     <a class="user-menu" href="/index.html">
+                      <i class="fa fa-home" style="overflow-y: hidden;" aria-hidden="true"></i>
                       <span>Home</span>
                     </a>
                   </div>
                   <div id="addBook">
                     <a class="user-menu" href="/addBookPage/addBookPage.html">
+                      <i class="fa fa-book" style="overflow-y: hidden;" aria-hidden="true"></i>
                       <span>Add Book</span>
                     </a>
                   </div>
@@ -32,13 +42,19 @@
                       <span>Admin</span>
                     </a>
                   </div>
-                  <a
-                    class="user-menu"
-                    onclick="handleLogout()"
-                    href="#"
-                    class="profile-item"
-                    >Logout</a
-                  >
+                    <a
+              class="user-menu"
+              onclick="handleLogout()"
+              href="#"
+              class="profile-item"
+            >
+              <i
+                class="fa fa-power-off"
+                style="overflow-y: hidden"
+                aria-hidden="true"
+              ></i>
+              <span>Logout</span>
+            </a>
             </div>
             
           </div>
@@ -46,8 +62,14 @@
         </nav>
       </header>
     <div class="container">
-        <h1>Library Book Management</h1>
+        <!-- <h1>Library Book Management</h1> -->
         <div class="book-actions">
+           <div class="user-section">
+                <h2>User information Check</h2>
+                <input type="id" id="check-user-id" placeholder="User ID" />
+                <button id="check-button">Check</button>
+                <div id="user-message"></div>
+            </div>
             <div class="issue-section">
                 <h2>Issue Book</h2>
                 <input type="text" id="issue-user-id" placeholder="User ID" />
@@ -65,11 +87,20 @@
             </div>
         </div>
     </div>
-    <footer
-    style="background-color: var(--primary-color); color: white; padding: 2px 20px; text-align: center; position: fixed; bottom: 0; width:100vw">
-    <p>&copy; 2024 | RMSTU Library Management System. All Rights Reserved.</p>
-    <p><b>Developed by Zero or One</b></p>
-  </footer>
+     <footer
+      style="
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2px 20px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100vw;
+      "
+    >
+      <p>&copy; 2024 | RMSTU Library Management System. All Rights Reserved.</p>
+      <p>Developed by <b>Zero or One</b></p>
+    </footer>
     <script src="script.js"></script>
     <script src="/loginPage/auth.js"></script>
 </body>

@@ -27,7 +27,14 @@
           <div class="link">
             <div id="home">
               <a class="user-menu" href="/index.html">
+                <i class="fa fa-home" aria-hidden="true"></i>
                 <span>Home</span>
+              </a>
+            </div>
+            <div id="profile">
+              <a class="user-menu" href="/profilePage/index.html">
+                <i class="fa-regular fa-user"></i>
+                <span>profile</span>
               </a>
             </div>
             <div id="sign_in">
@@ -41,7 +48,10 @@
               onclick="handleLogout()"
               href="#"
               class="profile-item"
-              >Logout</a
+              >
+              <i class="fa fa-power-off" aria-hidden="true"></i>
+
+              Logout</a
             >
           </div>
         </div>
@@ -53,6 +63,10 @@
       <div class="spinner"></div>
     </div>
     <main id="book_detail"></main>
+     <footer style="background-color: var(--primary-color); color: white; padding: 2px 20px; text-align: center; position: relative; bottom: 0; width:100%;">
+      <p>&copy; 2024 | RMSTU Library Management System. All Rights Reserved.</p>
+      <p><b>Developed by Zero or One</b></p>
+    </footer> 
     <script src="bookdetails.js"></script>
     <script src="../loginPage/auth.js"></script>
   </body>

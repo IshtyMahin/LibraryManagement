@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RMSTU Library</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" type="image/x-icon" href="../assets/image/RMSTU_icon.png">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/image/RMSTU_icon.png"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -19,9 +23,7 @@
       <nav class="nav-bar">
         <div class="nav-top">
           <div class="logo">
-            <a href="/index.html">
-              RMSTU LIBRARY
-            </a>
+            <a href="/index.html"> RMSTU LIBRARY </a>
           </div>
           <div class="searchbar">
             <div class="header-search">
@@ -53,37 +55,46 @@
               </form>
             </div>
           </div>
-         <div class="link">
-          <div id="addBook" style="display: none;">
-            <a class="user-menu" href="addBookPage/addBookPage.html">
-              <span>Add Book</span>
+          <div class="link">
+            <div id="addBook" style="display: none">
+              <a class="user-menu" href="addBookPage/addBookPage.html">
+                <i class="fa fa-book" style="overflow-y: hidden;" aria-hidden="true"></i>
+
+                <span>Add Book</span>
+              </a>
+            </div>
+            <div id="profile">
+              <a class="user-menu" href="/profilePage/index.html">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+              </a>
+            </div>
+            <div id="admin" style="display: none">
+              <a class="user-menu" href="IssueAndReturnBook/index.html">
+                <i style="overflow-y: hidden;" class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <span>Admin</span>
+              </a>
+            </div>
+            <div id="sign_in">
+              <a class="user-menu" href="../loginPage/login.html">
+                <i class="fa-regular fa-user"></i>
+                <span>Sign in</span>
+              </a>
+            </div>
+            <a
+              class="user-menu"
+              onclick="handleLogout()"
+              href="#"
+              class="profile-item"
+            >
+              <i
+                class="fa fa-power-off"
+                style="overflow-y: hidden"
+                aria-hidden="true"
+              ></i>
+              <span>Logout</span>
             </a>
           </div>
-          <div id="profile">
-            <a class="user-menu" href="/profilePage/index.html">
-              <span>Profile</span>
-            </a>
-          </div>
-          <div id="admin" style="display: none;">
-            <a class="user-menu" href="IssueAndReturnBook/index.html">
-              <span>Admin</span>
-            </a>
-          </div>
-          <div id="sign_in">
-            <a class="user-menu" href="../loginPage/login.html">
-              <i class="fa-regular fa-user"></i>
-              <span>Sign in</span>
-            </a>
-          </div>
-          <a
-            class="user-menu"
-            onclick="handleLogout()"
-            href="#"
-            class="profile-item"
-            >Logout</a
-          >
-         </div>
-          
         </div>
         <div class="separator"></div>
         <div class="nav-down">
@@ -128,10 +139,19 @@
     <main></main>
 
     <footer
-    style="background-color: var(--primary-color); color: white; padding: 2px 20px; text-align: center; position: relative; bottom: 0; width:100vw;">
-    <p>&copy; 2024 | RMSTU Library Management System. All Rights Reserved.</p>
-    <p><b>Developed by Zero or One</b></p>
-  </footer>
+      style="
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2px 20px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100vw;
+      "
+    >
+      <p>&copy; 2024 | RMSTU Library Management System. All Rights Reserved.</p>
+      <p>Developed by <b>Zero or One</b></p>
+    </footer>
 
     <script>
       let listItems = document.querySelectorAll(".dept-name");
@@ -145,5 +165,4 @@
     <script src="../loginPage/auth.js"></script>
     <script src="./script.js"></script>
   </body>
-</html>  
-
+</html>

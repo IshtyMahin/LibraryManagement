@@ -24,6 +24,8 @@ window.addEventListener("load", async () => {
 });
 
 function fillForm(book) {
+  console.log(book);
+  
   document.querySelector('input[name="ISBN"]').value = book.ISBN;
   document.querySelector('input[name="title"]').value = book.title;
   document.querySelector('input[name="edition"]').value = book.edition;
@@ -131,9 +133,12 @@ async function editBook(bookData) {
     const result = await response.json();
     //console.log("Success:", result);
       alert("Book edited successfully!");
-      window.location.href = "/";
+      // window.location.href = "/";
+       window.history.back();
   } catch (error) {
     console.error("Error:", error);
     alert(`There was a problem editing the book: ${error.message}`);
   }
 }
+
+

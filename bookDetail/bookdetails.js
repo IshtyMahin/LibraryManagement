@@ -87,7 +87,9 @@ window.addEventListener("load", async () => {
             Edition: <span>${book.edition} Edition</span>
           </p>
           <p class="book-category">
-            Category: <span><a href="">${book.catagory}</a></span> </p>
+            Category: <span><a href="/?filter=catagory&value=${book.catagory}">${
+              book.catagory
+            }</a></span> </p>
           <p class="book-qnty">
             In Stock: <span>${book.qty} Copies</span>
           </p>

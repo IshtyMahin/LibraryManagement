@@ -60,14 +60,8 @@ const fetchBookInfo = async (isbn) => {
   }
 };
 
-window.addEventListener("load", async () => {
-  const spinner = document.getElementById("loading-spinner");
-  spinner.style.display = "flex"; // Show the spinner
-
-  try {
-    const user = await authVerifier();
-    if (user && user.regId) {
-      const userInfo = await fetchUserInfo(user.regId);
+const profileDetail= async (regId)=>{
+      const userInfo = await fetchUserInfo(regId);
       document.getElementById("regId").textContent = userInfo.regId;
       document.getElementById("name").textContent = userInfo.name;
       document.getElementById("session").textContent = userInfo.session;
@@ -98,8 +92,24 @@ window.addEventListener("load", async () => {
           `;
 
           bookListContainer.appendChild(bookCard);
-        }
-      }
+          }}
+}
+window.addEventListener("load", async () => {
+  const spinner = document.getElementById("loading-spinner");
+  spinner.style.display = "flex"; // Show the spinner
+
+  try {
+    const user = await authVerifier();
+    const queryParams = new URLSearchParams(window.location.search);
+    let regId = queryParams.get("id");
+    console.log(regId);
+    
+    const paramUser = await fetchUserInfo(regId)
+    if(regId){
+      profileDetail(regId);
+    }
+    else if (user && user.regId) {
+         profileDetail(user.regId)
     } else {
       window.location.href = "/loginPage/login.html";
     }

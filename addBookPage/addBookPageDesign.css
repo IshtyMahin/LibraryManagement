@@ -18,11 +18,10 @@
 /* ----------------------------------------------------------------------- */
 /* header section  */
 
-
 /* ----------------------------------------------------------------------- */
 /* nav-bar  */
 .nav-bar {
-  position: fixed; 
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 9999;
@@ -33,21 +32,18 @@
   justify-content: space-between;
   align-items: center;
   background: var(--secondary-color);
-  padding: 0 8%;
+  padding: 0 2%;
 }
-
 .link{
   display: flex;
   justify-content: space-between;
-  gap: 5PX;
+  gap: 10PX;
   align-items: center;
 }
-
 .logo {
   width: 200px;
-  height: 60px;
+  height: 70px;
 }
-
 .logo a {
   width: 100%;
   height: 100%;
@@ -76,6 +72,9 @@
   align-items: stretch;
   position: relative;
   width: 100%;
+}
+.input-group ::placeholder{
+  color: rgba(0, 0, 0, 0.813);
 }
 .input-group .new-input {
   border: none;
