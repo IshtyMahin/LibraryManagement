@@ -5,6 +5,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "poppins", sans-serif;
+  overflow-x: hidden;
+
 }
 
 :root {
@@ -57,7 +59,7 @@
   height: 100%;
 }
 .searchbar {
-  width: 57%;
+  width: 50%;
 }
 .header-search {
   border: 1px solid var(--primary-color);

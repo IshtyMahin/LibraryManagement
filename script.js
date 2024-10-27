@@ -134,12 +134,11 @@ window.addEventListener("load", async () => {
   if (userType == "masteradmin" || userType == "user") {
     // window.location.href = "/mainPage/";
     document.getElementById("sign_in").style.display = "none";
-    if (userType == "masteradmin") { 
+    if (userType == "masteradmin") {
       document.getElementById("profile").style.display = "none";
       document.getElementById("addBook").style.display = "block";
       document.getElementById("admin").style.display = "block";
     }
-
   } else {
     window.location.href = "/loginPage/login.html";
   }
@@ -183,7 +182,6 @@ const createBookContainer = (book) => {
   return container;
 };
 
-
 const createBookSection = (id, title, booksData) => {
   const section = document.createElement("section");
   section.id = id;
@@ -209,7 +207,6 @@ const createBookSection = (id, title, booksData) => {
   return section;
 };
 
-
 const appendSectionsToMainFilter = async (val, filter) => {
   try {
     const mainElement = document.querySelector("main");
@@ -229,9 +226,7 @@ const appendSectionsToMainFilter = async (val, filter) => {
     const booksData = await fetchBook(val, filter);
 
     booksData.forEach((book) => {
-      booksList.appendChild(
-        createBookContainer(book)
-      );
+      booksList.appendChild(createBookContainer(book));
     });
 
     section.appendChild(divWrapper);
@@ -240,7 +235,6 @@ const appendSectionsToMainFilter = async (val, filter) => {
     console.error("Error appending sections to main:", error);
   }
 };
-
 
 const appendSectionsToMainSearch = async (value) => {
   try {
@@ -264,10 +258,19 @@ const appendSectionsToMainSearch = async (value) => {
     const booksData = (await Promise.all(fetches)).flat();
 
     booksData.forEach((book) => {
-      booksList.appendChild(
-        createBookContainer(book)
-      );
+      booksList.appendChild(createBookContainer(book));
     });
+
+    if (booksData.length == 0) {
+      divWrapper.innerHTML += `
+    <div style="text-align: center; padding: 20px;">
+      <h2 style="color: #ff6347; font-family: 'Arial', sans-serif; border: 2px solid #ff6347; display: inline-block; padding: 10px; border-radius: 10px;">
+        📚 No Books Found! 🚫
+      </h2>
+      <p style="color: #555; font-size: 16px;">Try searching with a different keyword or check again later.</p>
+    </div>
+  `;
+    }
 
     section.appendChild(divWrapper);
     mainElement.appendChild(section);
@@ -275,7 +278,6 @@ const appendSectionsToMainSearch = async (value) => {
     console.error("Error appending sections to main:", error);
   }
 };
-
 
 document
   .getElementById("searchForm")
@@ -291,11 +293,10 @@ document
     window.location.href = newUrl;
   });
 
-  
 const view_details = async (title) => {
   window.location.href = `bookDetail/bookdetail.html?title=${title}`;
   // //console.log(title);
-  const book= await fetchBook(title, 'title');
+  const book = await fetchBook(title, "title");
   const mainElement = document.getElementById("book_detail");
   //console.log(mainElement);
   mainElement.innerHTML = "";
