@@ -5,8 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "poppins", sans-serif;
-  overflow: hidden;
-
+  overflow-x: hidden;
 }
 
 :root {
@@ -35,10 +34,10 @@
   background: var(--secondary-color);
   padding: 0 2%;
 }
-.link{
+.link {
   display: flex;
   justify-content: space-between;
-  gap: 10PX;
+  gap: 10px;
   align-items: center;
 }
 .logo {
@@ -85,7 +84,7 @@
   flex: 1 1 auto;
   font-size: 14px;
 }
-.input-group ::placeholder{
+.input-group ::placeholder {
   color: rgba(0, 0, 0, 0.813);
 }
 .input-group .new-input:focus {
@@ -106,6 +105,7 @@
 
 .search-btn .btn i {
   font-size: 25px;
+  overflow: hidden;
 }
 .user-menu {
   display: flex;
@@ -209,7 +209,7 @@ section {
   font-weight: 500;
   /* overflow:visible; */
 }
-.view-all-btn{
+.view-all-btn {
   text-decoration: none;
 }
 .view-all-btn:hover {
@@ -326,22 +326,21 @@ section {
   background: #d2e8cc;
   justify-content: center;
   align-items: center;
-  z-index: 50; 
+  z-index: 50;
 }
 
 #loading-spinner .spinner {
   width: 40px;
   height: 40px;
-  border: 4px solid #016a3f; 
+  border: 4px solid #016a3f;
   border-top: 4px solid #b6da9c81;
   border-radius: 50%;
-  animation: spin 1s linear infinite; 
+  animation: spin 1s linear infinite;
 }
-main{
-   
+main {
   background-color: #d2e8cc;
 }
-.hidden{
+.hidden {
   display: none !important;
 }
 
@@ -353,4 +352,3 @@ main{
     transform: rotate(360deg);
   }
 }
-
