@@ -28,7 +28,7 @@ function fillForm(book) {
   
   document.querySelector('input[name="ISBN"]').value = book.ISBN;
   document.querySelector('input[name="title"]').value = book.title;
-  document.querySelector('input[name="edition"]').value = book.edition.slice(0, -2);
+  document.querySelector('input[name="edition"]').value = parseInt(book.edition.slice(0, -2));
   document.querySelector('input[name="author"]').value = book.author;
   document.querySelector('input[name="publication"]').value = book.publication;
   document.querySelector('input[name="qty"]').value = book.qty;
