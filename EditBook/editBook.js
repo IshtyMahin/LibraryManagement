@@ -8,7 +8,6 @@ const hideSpinner = () => {
   spinner.classList.add("hidden");
 };
 
-
 window.addEventListener("load", async () => {
   showSpinner();
   const queryParams = new URLSearchParams(window.location.search);
@@ -25,10 +24,12 @@ window.addEventListener("load", async () => {
 
 function fillForm(book) {
   console.log(book);
-  
+
   document.querySelector('input[name="ISBN"]').value = book.ISBN;
   document.querySelector('input[name="title"]').value = book.title;
-  document.querySelector('input[name="edition"]').value = parseInt(book.edition.slice(0, -2));
+  document.querySelector('input[name="edition"]').value = parseInt(
+    book.edition.slice(0, -2)
+  );
   document.querySelector('input[name="author"]').value = book.author;
   document.querySelector('input[name="publication"]').value = book.publication;
   document.querySelector('input[name="qty"]').value = book.qty;
@@ -39,16 +40,16 @@ function fillForm(book) {
 }
 
 async function fetchBookDetails(isbn) {
-    try {
-      //console.log(isbn);
+  try {
+    //console.log(isbn);
     const response = await fetch(
       `https://librarymanagementsystem-rmstu.vercel.app/api/books/${isbn}`
     );
     if (!response.ok) {
       throw new Error("Book not found");
     }
-        const book = await response.json();
-        //console.log(book);
+    const book = await response.json();
+    //console.log(book);
     fillForm(book[0]);
   } catch (error) {
     console.error("Error fetching book details:", error);
@@ -79,7 +80,7 @@ document
           author: formData.get("author"),
           publication: formData.get("publication"),
           qty: formData.get("qty"),
-          category: formData.get("category"),
+          catagory: formData.get("category"),
           shelfLoc: {
             shelfNo: formData.get("shelfNo"),
             shelveNo: formData.get("shelveNo"),
@@ -100,12 +101,13 @@ document
         author: formData.get("author"),
         publication: formData.get("publication"),
         qty: formData.get("qty"),
-        category: formData.get("category"),
+        catagory: formData.get("category"),
         shelfLoc: {
           shelfNo: formData.get("shelfNo"),
           shelveNo: formData.get("shelveNo"),
         },
       };
+      console.log(bookData.category);
 
       await editBook(bookData);
     }
@@ -113,6 +115,8 @@ document
 
 async function editBook(bookData) {
   const isbn = document.querySelector('input[name="ISBN"]').value;
+  console.log(bookData);
+
   try {
     const response = await fetch(
       `https://librarymanagementsystem-rmstu.vercel.app/api/books/${isbn}`,
@@ -131,14 +135,12 @@ async function editBook(bookData) {
     }
 
     const result = await response.json();
-    //console.log("Success:", result);
-      alert("Book edited successfully!");
-      // window.location.href = "/";
-       window.history.back();
+    console.log("Success:", result);
+    alert("Book edited successfully!");
+    // window.location.href = "/";
+    window.history.back();
   } catch (error) {
     console.error("Error:", error);
     alert(`There was a problem editing the book: ${error.message}`);
   }
 }
-
-

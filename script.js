@@ -79,7 +79,7 @@ const appendSectionsToMain = async () => {
       "catagory"
     );
     const fmrtBookPromise = fetchBook(
-      "Fisharies and Marine Resource Technology",
+      "Fisheries and Marine Resources Technology",
       "catagory"
     );
 
@@ -106,7 +106,7 @@ const appendSectionsToMain = async () => {
       },
       {
         id: "fmrt",
-        title: "Fisharies and Marine Resource Technology",
+        title: "Fisheries and Marine Resources Technology",
         books: fmrtBook,
       },
     ];
